@@ -1,0 +1,98 @@
+Object/Class:
+House
+
+Methods:
+setAddress
+getAddress
+
+setPrice
+getPrice
+
+setBedroom
+getBedroom
+
+setBath
+getBath
+
+setLandlord
+getLandlord
+
+setPhone
+GetPhone
+
+setParking
+getParking
+
+setAvailabilityStart
+getAvailabilityStart
+
+setAvailabilityEnd
+getAvailabilityEnd
+
+setDescription
+getDescription
+
+boolean isParking
+boolean isElectric
+boolean isHeating
+boolean isAC
+boolean isH2O
+boolean isInternet
+boolean isFurniture
+boolean isPet
+boolean isAccess
+boolean isSmoking
+boolean isNonSmoking
+boolean isKitchen
+
+ 
+
+boolean isFavorite
+
+booleanisSummer
+booleanisWinter
+booleanisYearLong
+
+Object/Class:
+Button(boolean b){
+}
+
+methods
+setisParking {
+setisElectric
+setisHeating
+setisAC
+setisH2O
+setisInternet
+setisFurniture
+setisPet
+setisAccess
+setisSmoking
+setisNonSmoking
+setisKitchen
+
+
+getisParking
+getisElectric
+getisHeating
+getisAC
+getisH2O
+getisInternet
+getisFurniture
+getisPet
+getisAccess
+getisSmoking
+getisNonSmoking
+getisKitchen
+
+toggles between true and false takes in different types of characteristics(Parking,Electric, etc)
+
+object/class:
+Accounts
+
+methods:
+setid
+setusername
+setpassword
+setemail
+setphone
