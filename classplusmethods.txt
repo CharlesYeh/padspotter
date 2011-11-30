@@ -96,3 +96,8 @@ setusername
 setpassword
 setemail
 setphone
+getid
+getusername
+getpassword
+getemail
+getphone
