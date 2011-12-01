@@ -1,60 +1,44 @@
 Object/Class:
-House
-
-Methods:
-setAddress
-getAddress
-
-setPrice
-getPrice
-
-setBedroom
-getBedroom
-
-setBath
-getBath
-
-setLandlord
-getLandlord
-
-setPhone
-GetPhone
-
-setParking
-getParking
-
-setAvailabilityStart
-getAvailabilityStart
-
-setAvailabilityEnd
-getAvailabilityEnd
-
-setDescription
-getDescription
-
-boolean isParking
-boolean isElectric
-boolean isHeating
-boolean isAC
-boolean isH2O
-boolean isInternet
-boolean isFurniture
-boolean isPet
-boolean isAccess
-boolean isSmoking
-boolean isNonSmoking
-boolean isKitchen
-
- 
-
-boolean isFavorite
-
-booleanisSummer
-booleanisWinter
-booleanisYearLong
-
-Object/Class:
-Button(boolean b){
+House {
+	String getAddress
+	int getPrice
+	int getBedrooms
+	int getBaths
+	getLandlord
+	String getPhone
+	getParking
+	String getAvailabilityStart
+	String getAvailabilityEnd
+	String getDescription
+	
+	setAddress
+	setPrice
+	setBedrooms
+	setBaths
+	setLandlord
+	setPhone
+	setParking
+	setAvailabilityStart
+	setAvailabilityEnd
+	setDescription
+	
+	boolean isParking
+	boolean isElectric
+	boolean isHeating
+	boolean isAC
+	boolean isH2O
+	boolean isInternet
+	boolean isFurniture
+	boolean isPet
+	boolean isAccess
+	boolean isSmoking
+	boolean isNonSmoking
+	boolean isKitchen
+	
+	/*************How do these work...?*************/
+	booleanisSummer
+	booleanisWinter
+	booleanisYearLong
 }
 
 methods
@@ -87,17 +71,15 @@ getisKitchen
 
 toggles between true and false takes in different types of characteristics(Parking,Electric, etc)
 
-object/class:
-Accounts
-
-methods:
-setid
-setusername
-setpassword
-setemail
-setphone
-getid
-getusername
-getpassword
-getemail
-getphone
+User {
+	setid
+	setusername
+	setpassword
+	setemail
+	setphone
+	getid
+	getusername
+	getpassword
+	getemail
+	getphone
+}
