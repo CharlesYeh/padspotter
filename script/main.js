@@ -50,4 +50,24 @@ function showListview() {
 			document.write("</div>");
 		document.write("</div>");
 	}
+
+function house(id,idLandlord,price,bedrooms,bathrooms,kitchens,phone,availableStart,availableEnd,includedElectric,hasParking,hasAC,hasFurniture,hasPets,hasHandicap,isNonSmoking)
+	{
+	    this.id=id;//INT
+	    this.idLandlord=idLandlord;//INT
+	    this.price=price;//INT
+	    this.bedrooms=bedrooms;//INT
+	    this.bathrooms=bathrooms;//INT
+	    this.kitchens=kitchens;//INT
+	    this.phone=phone;//STRING
+	    this.availableStart=availableStart;//"2011-01-01 01:01:0000"
+	    this.availableEnd=availableEnd;//"2011-01-01 01:01:0000"
+	    this.includedElectric=includedElectric;//BOOL
+	    this.hasParking=hasParking;//BOOL
+	    this.hasAC=hasAC;//BOOL
+	    this.hasFurniture=hasFurniture;//BOOL
+	    this.hasPets=hasPets;//BOOL
+	    this.hasHandicap=hasHandicap;//BOOL
+	}
+
 }
