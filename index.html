@@ -1,4 +1,3 @@
-
 <html>
 	<head>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -9,7 +8,9 @@
 		
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=true&region=US"></script>
 		<script src="script/main.js"></script>
-                <script src="ajax.js"></script>
+        <script src="ajax.js"></script>
+
+		</script>
 	</head>
 	<body onLoad="initialize()" onResize="resize();">
 		<div id="banner">
@@ -19,15 +20,6 @@
 		<div id="left_container">
 			<div id="map_canvas"></div>
 			<div id="filters">FILTERS GO HERE</div>
-
-              <div id="status"></div>
-<h2>Ajax Post to PHP and Get Return Data</h2>
-Your First Name: <input id="first_name" name="first_name" type="text" />
-<br /><br />
-Your Last Name: <input id="last_name" name="last_name" type="text" />
-<br /><br />
-<input name="myBtn" type="submit" value="Submit Data" onClick="javascript:ajax_post();">
-<br /><br />
 </div>
 		</div>
 		<div id="list_view">
@@ -36,4 +28,12 @@ Your Last Name: <input id="last_name" name="last_name" type="text" />
 			</script>
 		</div>
 	</body>
+	<div>
+		<form method="get" action="">
+		Your id: <input type="text" id="id" name="id" size="25" /> <br />
+		<input type="button" value="submit" onClick="ajaxget()" />
+		</form>
+	</div>	
+		<div id="result"> </div>
+		
 </html>
