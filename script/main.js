@@ -39,6 +39,7 @@ function resize() {
 }
 
 function showListview() {
+	
 	for (var a = 0; a < 20; a++) {
 		document.write("<div class='list_item'>");
 			document.write("<div class='list_item_icon'>");
