@@ -1,7 +1,7 @@
 function ajaxRequest(){
     var activexmodes=["Msxml2.XMLHTTP", "Microsoft.XMLHTTP"] //activeX versions to check for in IE
     if (window.ActiveXObject){ //Test for support for ActiveXObject in IE first (as XMLHttpRequest in IE7 is broken)
-        for (var i=0; i<activexmodes.length; i++){
+    	for (var i=0; i<activexmodes.length; i++){
         try{
             return new ActiveXObject(activexmodes[i])
         }
@@ -17,16 +17,18 @@ function ajaxRequest(){
     }
 
 var mygetrequest=new ajaxRequest()
+
 mygetrequest.onreadystatechange=function(){
- if (mygetrequest.readyState==4){
-  if (mygetrequest.status==200 || window.location.href.indexOf("http")==-1){
-   document.getElementById("result").innerHTML=mygetrequest.responseText
-  }
-  else{
-   alert("An error has occured making the request")
-  }
- }
+	if (mygetrequest.readyState==4){
+  		if (mygetrequest.status==200 || window.location.href.indexOf("http")==-1){
+   			document.getElementById("result").innerHTML=mygetrequest.responseText
+  		}
+  		else{
+   		alert("An error has occured making the request")
+  		}
+ 	}
 }
+
 var idvalue=encodeURIComponent(document.getElementById("id").value)
 mygetrequest.open("GET", "search.php?id="+idvalue, true)
 mygetrequest.send(null)
