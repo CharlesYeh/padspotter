@@ -44,7 +44,7 @@ function showListview() {
 	for (var a = 0; a < 20; a++) {
 		document.write("<div class='list_item'>");
 			document.write("<div class='list_item_icon'>");
-				document.write("<a href='#'><img src='images/icon_80x80.jpg' /></a>");
+				document.write("<a href='/search.php?id="+a+"'><img src='images/icon_80x80.jpg' /></a>");
 			document.write("</div>");
 			document.write("<div class='list_item_details'>");
 				document.write("Bedrooms/Bathrooms<br />");
