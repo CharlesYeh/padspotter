@@ -38,6 +38,7 @@ function resize() {
 	listview.style.height = resHeight;
 }
 
+//Pass in a data structure that has an id of each image
 function showListview() {
 	
 	for (var a = 0; a < 20; a++) {
@@ -51,7 +52,8 @@ function showListview() {
 			document.write("</div>");
 		document.write("</div>");
 	}
-
+	
+//Pass the house into showListView and call house.id and get that and pass it into the href.
 function house(id,idLandlord,price,bedrooms,bathrooms,kitchens,phone,availableStart,availableEnd,includedElectric,hasParking,hasAC,hasFurniture,hasPets,hasHandicap,isNonSmoking)
 	{
 	    this.id=id;//INT

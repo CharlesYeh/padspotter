@@ -1,4 +1,4 @@
-<?
-$id=(int)$_GET['id'];
-echo "<span style='color:red'>Your id is:<b>$id</b></span>";
-?>
+<h1>Welcome, your id is:</h1>
+<a href="/search.php?id=123"><img src="arlando.jpg"></a>
+
+<?php echo $_GET["id"]; ?>
