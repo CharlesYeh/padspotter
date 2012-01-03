@@ -33,6 +33,7 @@ case 0:
 	$house->hasHandicap = false;
 		   
 	$house->isNonsmoking = false;
+	$house->description = 'Cozy home on Thayer street. Good location and good price. Currently being renovated but will be done soon.';
 	break;
 case 1:
 	$house->id		= 1;
@@ -56,6 +57,7 @@ case 1:
 	$house->hasHandicap	= true;
 		   
 	$house->isNonsmoking	= false;
+	$house->description = 'Very old but still very nice. Super luxurious.';
 	break;
 case 2:
 	$house->id		= 2;
@@ -79,6 +81,7 @@ case 2:
 	$house->hasHandicap	= true;
 		   
 	$house->isNonsmoking	= true;
+	$house->description = 'Give me a call if you\'d like to check out the house! I\'m free Thursdays and weekends.';
 	break;
 }
 

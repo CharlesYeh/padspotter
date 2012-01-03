@@ -1,6 +1,6 @@
 function getURLVars() {
 	var vars = {};
-	window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) { vars[key] = value; });
+	window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) { console.debug(m + " " + key + " " + value); vars[key] = value; });
 	
 	return vars;
 }
@@ -16,7 +16,10 @@ function result() {
     }
 }
 
-function request(reqlink, data, result){
+function request(reqlink, data, result, sync){
+	if(typeof(sync) == 'undefined')
+		sync = true;
+	
 	if (window.XMLHttpRequest)
 	{
 		// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -29,7 +32,7 @@ function request(reqlink, data, result){
 	}
 	
 	xmlhttp.onreadystatechange = result;
-	xmlhttp.open("POST", reqlink, true);
+	xmlhttp.open("POST", reqlink, sync);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send(data);
 }
