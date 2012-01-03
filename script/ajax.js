@@ -1,3 +1,9 @@
+function getURLVars() {
+	var vars = {};
+	window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) { vars[key] = value; });
+	
+	return vars;
+}
 
 function result() {
 	if (xmlhttp.readyState==4 && xmlhttp.status==200) {

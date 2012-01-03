@@ -8,21 +8,11 @@
 		
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=true&region=US"></script>
 		<script src="script/ajax.js"></script>
-		<script src="script/main.js"></script>
+		<script src="script/details.js"></script>
 	</head>
-	<body onLoad="initialize()" onResize="resize();">
-		<div id="banner">
-				PADSPOTTER
-			<div id="banner_nav" align="right"><a href="#">Out-sublet</a> | <a href="#">Landlords</a></div>
-		</div>
-		<div id="left_container">
-			<div id="map_canvas"></div>
-			<div id="filters">FILTERS GO HERE</div>
-		</div>
-		<div id="list_view">
-			<script>
-				showListview();
-			</script>
-		</div>
+	<body>
+		<script>
+			getURLVars();
+		</script>
 	</body>
 </html>
