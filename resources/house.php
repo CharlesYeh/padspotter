@@ -10,6 +10,9 @@ if (!is_numeric($id)) {
 
 // hard-coded TEMPORARY values
 switch ($id) {
+case 4:
+case 5:
+case 7:
 case 0:
 	
 	$house->id = 0;
@@ -35,6 +38,7 @@ case 0:
 	$house->isNonsmoking = false;
 	$house->description = 'Cozy home on Thayer street. Good location and good price. Currently being renovated but will be done soon.';
 	break;
+case 6:
 case 1:
 	$house->id		= 1;
 	$house->idLandlord		= 0;
@@ -59,6 +63,9 @@ case 1:
 	$house->isNonsmoking	= false;
 	$house->description = 'Very old but still very nice. Super luxurious.';
 	break;
+case 8:
+case 9:
+case 3:
 case 2:
 	$house->id		= 2;
 	$house->idLandlord		= 1;

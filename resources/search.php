@@ -11,7 +11,7 @@ $result = mysql_query('SELECT * FROM houses');
 {
 	"houses": [
 		<?php
-		for ($a = 0; $a < 3; $a++) {
+		for ($a = 0; $a < 9; $a++) {
 			
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, 'http://eactiv.com/padspotter/resources/house.php?id=' . $a);
