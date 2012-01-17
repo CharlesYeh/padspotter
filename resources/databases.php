@@ -3,9 +3,9 @@
 //-----------------------------LOGIN-----------------------------
 function db_login(){
 	
-	$ip		= "dbgamestest.db.4526347.hostedresource.com";
-	$dbname	= "dbgamestest";
-	$pw		= "Y3h22015";
+	$ip		= "dbpadspotter.db.4526347.hostedresource.com";
+	$dbname	= "dbpadspotter";
+	$pw		= "broccoliN0W";
 	$db		= mysql_connect($ip, $dbname, $pw);
 	
 	if (!$db){

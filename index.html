@@ -19,16 +19,44 @@
 		<div id="left_container">
 			<div id="map_canvas"></div>
 			<div id="filters">
+				<form action="javascript: filterSearch();">
 				<div id="filter_bar_cont">
 					<script>
-						drawFilterBars();
+					
+					var barPrice, barBeds, barBaths;
+					function drawFilterBars() {
+						document.write("<table>");
+							document.write("<tr>");
+								document.write("<td>Price:</td>");
+								document.write("<td>");
+									barPrice = new SelectBar(400, 1600, 6, "$");
+								document.write("</td>");
+							document.write("</tr>");
+							document.write("<tr>");
+								document.write("<td>Bedrooms:</td>");
+								document.write("<td>");
+									barBeds	 = new SelectBar(1, 9, 4);
+								document.write("</td>");
+							document.write("</tr>");
+							document.write("<tr>");
+								document.write("<td>Bathrooms:</td>");
+								document.write("<td>");
+									barBaths = new SelectBar(1, 7, 6);
+								document.write("</td>");
+							document.write("</tr>");
+						document.write("</table>");
+					}
+					drawFilterBars();
+					
 					</script>
 				</div>
 				<div id="filter_btn_cont">
 					<script>
 						drawFilterBtns();
 					</script>
+					<input type="submit" value="Search!" />
 				</div>
+				</form>
 			</div>
 		</div>
 		<div id="list_view">

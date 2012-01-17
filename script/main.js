@@ -41,6 +41,13 @@ function resize() {
 //Pass in a data structure that has an id of each image
 function showListview() {
 	request('resources/search.php', '', renderListview);
+	
+	// show loading animation
+	showListviewLoading();
+}
+function showListviewLoading() {
+	var div = document.getElementById('list_view');
+	div.innerHTML = "";
 }
 function renderListview() {
 	if (xmlhttp.readyState!=4 || xmlhttp.status!=200)
@@ -66,4 +73,31 @@ function renderListview() {
 	}
 	
 	div.innerHTML += arr.join("");
+}
+
+function filterSearch() {
+	var box0 = (document.getElementById("box_0").checked);
+	var box1 = (document.getElementById("box_1").checked);
+	var box2 = (document.getElementById("box_2").checked);
+	var box3 = (document.getElementById("box_3").checked);
+	var box4 = (document.getElementById("box_4").checked);
+	var box5 = (document.getElementById("box_5").checked);
+	var box6 = (document.getElementById("box_6").checked);
+	
+	showListviewLoading();
+	
+	request("resources/search.php",  "amen_util="	+ box0 +
+									"&amen_heat="	+ box1 +
+									"&amen_net="	+ box2 +
+									"&amen_pets="	+ box3 +
+									"&amen_nonsmoke="+ box4 +
+									"&amen_furn="	+ box5 +
+									"&amen_laund="	+ box6 +
+									"&min_price="	+ barPrice.getStart() +
+									"&max_price="	+ barPrice.getEnd() +
+									"&min_beds="	+ barBeds.getStart() +
+									"&max_beds="	+ barBeds.getEnd() +
+									"&min_baths="	+ barBaths.getStart() +
+									"&max_baths="	+ barBaths.getEnd()
+									, renderListview);
 }

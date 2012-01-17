@@ -8,8 +8,34 @@ if (!is_numeric($id)) {
 	die('Invalid $house ID.');
 }
 
+$result = mysql_query('SELECT * FROM houses WHERE id = ' . $id);
+$row = mysql_fetch_array($result);
+
+	$house->id = $row['id'];
+	$house->idLandlord = $row['isLandlord'];
+	$house->price = $row['price'];
+	$house->bedrooms = $row['bedrooms'];
+	$house->bathrooms = $row['bathrooms'];
+	$house->kitchens = $row['kitchens'];
+		   
+	$house->phone = $row['phone'];
+		   
+	$house->availableStart = $row['availStart'];
+	$house->availableEnd = $row['availEnd'];
+		   
+	$house->includedElectric = false;
+		   
+	$house->hasParking = true;
+	$house->hasAC = true;
+	$house->hasFurniture = true;
+	$house->hasPets = true;
+	$house->hasHandicap = false;
+		   
+	$house->isNonsmoking = false;
+	$house->description = 'Cozy home on Thayer street. Good location and good price. Currently being renovated but will be done soon.';
+
 // hard-coded TEMPORARY values
-switch ($id) {
+/*switch ($id) {
 case 4:
 case 5:
 case 7:
@@ -90,37 +116,8 @@ case 2:
 	$house->isNonsmoking	= true;
 	$house->description = 'Give me a call if you\'d like to check out the house! I\'m free Thursdays and weekends.';
 	break;
-}
+}*/
 
 echo json_encode($house);
-
-/*
-$result = mysql_query('SELECT * FROM $houses WHERE id = ' -> $id) or die('Failed to retrieve $house data');
-$row = mysql_fetch_assoc($result);
-
-$$house = array('id			= $row['id'];
-		$house->idLandlord' = $row['idLandlord'];
-		$house->price		= $row['price'];
-		$house->bedrooms	= $row['bedrooms'];
-		$house->bathrooms	= $row['bathrooms'];
-		$house->kitchens	= $row['kitchens'];
-			   
-		$house->phone		= $row['phone'];
-			   
-		$house->availableStart	= $row['availStart'];
-		$house->availableEnd	= $row['availEnd'];
-			   
-		$house->includedElectric'= $row['boolElectric'];
-			   
-		$house->hasParking	= $row['boolParking'];
-		$house->hasAC		= $row['boolAC'];
-		$house->hasFurniture	= $row['boolFurniture'];
-		$house->hasPets	= $row['boolPets'];
-		$house->hasHandicap'= $row['boolHandicap'];
-			   
-		$house->isNonsmoking	= $row['boolNonsmoking']
-			}
-
-echo json_encode($$house);*/
 
 ?><?

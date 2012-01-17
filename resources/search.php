@@ -3,7 +3,37 @@
 require_once('databases.php');
 db_login();
 
-$result = mysql_query('SELECT * FROM houses');
+$amen0 = $_POST['amen_util'];
+$amen1 = $_POST['amen_heat'];
+$amen2 = $_POST['amen_net'];
+$amen3 = $_POST['amen_pets'];
+$amen4 = $_POST['amen_nonsmoke'];
+$amen5 = $_POST['amen_furn'];
+$amen6 = $_POST['amen_laund'];
+
+$minprice = $_POST['min_price'];
+$maxprice = $_POST['max_price'];
+$minbeds = $_POST['min_beds'];
+$maxbeds = $_POST['max_beds'];
+$minbaths = $_POST['min_baths'];
+$maxbaths = $_POST['max_baths'];
+
+//####################### SANITIZE INPUT ##########################
+
+if (isset($_POST['min_price'])) {
+	$result = mysql_query("SELECT * FROM houses WHERE price >= $minprice AND price <= $maxprice AND bedrooms >= $minbeds AND bedrooms <= $maxbeds AND bathrooms >= $minbaths AND bathrooms <= $maxbaths");
+	//$houses = array(0, 1, 2, 3);
+}
+else {
+	$result = mysql_query('SELECT * FROM houses');
+	//$houses = array(0, 1, 2, 3, 4, 5, 6, 7, 8);
+}
+
+$houses = array();
+while ($row = mysql_fetch_array($result)) {
+	array_push($houses, $row['id']);
+}
+
 // DO NOTHING, HARD CODED RESPONSES
 
 ?>
@@ -11,65 +41,15 @@ $result = mysql_query('SELECT * FROM houses');
 {
 	"houses": [
 		<?php
-		for ($a = 0; $a < 9; $a++) {
+		foreach ($houses as $h) {
 			
 			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, 'http://eactiv.com/padspotter/resources/house.php?id=' . $a);
+			curl_setopt($ch, CURLOPT_URL, 'http://eactiv.com/padspotter/resources/house.php?id=' . $h);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			echo curl_exec($ch) . ', ';
 			curl_close($ch);
 			
 		}
-		
-		/*
-		{
-			"id": 0,
-			"idLandlord": 0,
-			
-			"price": 1000,
-			"bedrooms": 2,
-			"bathrooms": 3,
-			"kitchens": 1,
-			
-			"phone": "123 456 7890",
-			
-			"availableStart": "2011-01-01 01:01:0000",
-			"availableEnd": "2012-01-01 01:01:0000",
-			
-			"includedElectric": true,
-			
-			"hasParking": true,
-			"hasAC": true,
-			"hasFurniture": false,
-			"hasPets": false,
-			"hasHandicap": false,
-			
-			"isNonsmoking": true,
-		},
-		{
-			"id": 1,
-			"idLandlord": 0,
-			
-			"price": 2500,
-			"bedrooms": 4,
-			"bathrooms": 5,
-			"kitchens": 2,
-			
-			"phone": "001 112 2223",
-			
-			"availableStart": "2011-05-01 11:01:0000",
-			"availableEnd": "2012-05-01 11:01:0000",
-			
-			"includedElectric": false,
-			
-			"hasParking": true,
-			"hasAC": true,
-			"hasFurniture": true,
-			"hasPets": false,
-			"hasHandicap": false,
-			
-			"isNonsmoking": false,
-		}*/
 		?>
 	]
 }
