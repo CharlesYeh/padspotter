@@ -40,7 +40,7 @@ function resize() {
 
 //Pass in a data structure that has an id of each image
 function showListview() {
-	request('resources/search.php', '', renderListview);
+	request('api/search.php', '', renderListview);
 	
 	// show loading animation
 	showListviewLoading();
@@ -86,7 +86,7 @@ function filterSearch() {
 	
 	showListviewLoading();
 	
-	request("resources/search.php",  "amen_util="	+ box0 +
+	request("api/search.php",  "amen_util="	+ box0 +
 									"&amen_heat="	+ box1 +
 									"&amen_net="	+ box2 +
 									"&amen_pets="	+ box3 +

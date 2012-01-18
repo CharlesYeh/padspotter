@@ -6,7 +6,7 @@ var id = vars["id"];
 var house;
 
 // synchronously load house data
-request('resources/house.php?id=' + id, '', loadHouse, false);
+request('api/house.php?id=' + id, '', loadHouse, false);
 
 function loadHouse() {
 	console.debug(xmlhttp.responseText);

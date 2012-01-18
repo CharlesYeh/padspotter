@@ -1,7 +1,19 @@
 // JavaScript Document
 
+// show most popular amenities
+var ids = new Array(4, 1, 5, 3, 6, 7, 2);
+
 var filterBtns = new Array("Utilities Included", "Heat/Gas Included", "Internet Included", "Pets Allowed", "No Smoking", "Furniture Included", "Laundry Available");
-var images = new Array("btn_25x25.jpg", "btn_25x25.jpg", "btn_25x25.jpg", "btn_25x25.jpg", "btn_25x25.jpg", "btn_25x25.jpg", "btn_25x25.jpg");
+
+var images = new Array("utilities.jpg", "heat.jpg", "net.jpg", "pets.jpg", "nonsmoke.jpg", "furniture.jpg", "laundry.jpg");
+
+// preload images
+if (document.images) {
+    img1 = new Image();
+	for (var a = 0; a < images.length; a++) {
+	    img1.src = "images/pressed" + images[a];
+	}
+}
 
 //----------------------------------------SLIDE BARS----------------------------------------
 
@@ -43,6 +55,7 @@ function SelectBar(min, max, intervals, label) {
 	this.canvas.addEventListener('mousemove', this.mouseMoveHandler, false);
 	this.canvas.addEventListener('mousedown', this.mouseDownHandler, false);
 	this.canvas.addEventListener('mouseup', this.mouseUpHandler, false);
+	this.canvas.addEventListener('mouseout', this.mouseUpHandler, false);
 }
 
 function draw() {
